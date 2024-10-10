@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upperScreen,
+.lowerScreen {
+    display: flex;
+    width: 50%;
+    height: 45%;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.upperScreen {
+    justify-content: center;
+    align-items: center;
+}
+
+.middle {
+    width: 49%;
+    height:5%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 1px 1px;
+}
+
+.screen {
+    width: 85%;
+    height: 80%;
+    border: 1px solid black;
+}
+
+.buttonBelow {
+    flex-grow: 3;
+    height: 100%;
+}
+
+.logo {
+    width: 100%;
+    height: 85%;
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.btn {
+    display: flex;
+    width: 100%;
+    height: 15%;
+}
+
+.btn > button {
+    flex-grow: 1;
+    flex-basis: 0;
+    border: 1px solid black;
+    margin: 1px;
+}
+
+.delete {
+    border-bottom-right-radius: 10px;
+}
+
+.size {
+    border-bottom-left-radius: 10px;
+}
+
+.buttonRight {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-grow:1;
+    flex-basis: 0;
+    height: 100%;
+}
+
+.reset {
+    background-color: grey;
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.text {
+    font-size: 15px;
+    margin-bottom: 33px;
+}
+
+.buttonLeft {
+    flex-grow:1;
+    flex-basis: 0;
+    height: 100%;
+}
