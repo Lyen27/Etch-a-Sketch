@@ -15,8 +15,8 @@ body {
 .upperScreen,
 .lowerScreen {
     display: flex;
-    width: 50%;
-    height: 45%;
+    width: 650px;
+    height: 292.05px;
     border: 1px solid black;
     border-radius: 25px;
 }
@@ -26,19 +26,26 @@ body {
     align-items: center;
 }
 
-.middle {
-    width: 49%;
-    height:5%;
-    border: 1px solid black;
-    border-radius: 20px;
-    margin: 1px 1px;
-}
-
 .screen {
     display: flex;
     width: 77.5%;
     height: 87%;
     border: 1px solid black;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 250px;
+    }
+
+.middle {
+    width: 637px;
+    height:32.44px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin: 1px 1px;
 }
 
 .buttonBelow {
@@ -58,7 +65,7 @@ body {
 }
 
 .slide {
-    width: 100%;
+    width: 50%;
     margin-bottom: 10px;
 }
 
@@ -112,11 +119,6 @@ body {
     height: 100%;
 }
 
-.container {
-display: flex;
-flex-wrap: wrap;
-width: 250px;
-height: 250px;
-}
+
 
 
