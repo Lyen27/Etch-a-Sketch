@@ -28,8 +28,8 @@ body {
 
 .screen {
     display: flex;
-    width: 77.5%;
-    height: 87%;
+    width: 502px;
+    height: 252px;
     border: 1px solid black;
 }
 
@@ -82,7 +82,7 @@ body {
     margin: 1px;
 }
 
-.delete {
+.eraser {
     border-bottom-right-radius: 10px;
 }
 
