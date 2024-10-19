@@ -2,9 +2,14 @@
 const containers = document.querySelectorAll('.container');
 const input = document.querySelector('.slide');
 const rainbow = document.querySelector('.rainbow');
-const pencil = document.querySelector('.pencil')
+const pencil = document.querySelector('.pencil');
+const eraser = document.querySelector('.eraser');
+const reset = document.querySelector('.reset');
+const opacity = document.querySelector('.opacity');
+const colorPicker = document.querySelector('.picker');
 let mouseState = false;
 let randomState = false;
+let deleteState = false;
 
 window.addEventListener("mouseup", () => {
     mouseState = false;
@@ -21,7 +26,11 @@ function createGrid (n) {
                     mouseState = true;
                     if (randomState === true) {
                         pixel.style.backgroundColor = `${randomColor()}`;
-                    } else {pixel.style.backgroundColor = 'black'};
+                    } else if (deleteState === true) {
+                      pixel.style.backgroundColor = 'white';
+                      pixel.style.opacity = '1'}
+                      else {
+                      pixel.style.cssText += `background-color:${colorPicker.value}; opacity: ${opacity.value}%;`};
                     e.preventDefault();
                 }
             })
@@ -29,14 +38,18 @@ function createGrid (n) {
                 if (mouseState === true) {
                     if (randomState === true) {
                         pixel.style.backgroundColor = `${randomColor()}`;
-                    } else {pixel.style.backgroundColor = 'black'};
+                    } else if (deleteState === true) {
+                      pixel.style.backgroundColor = 'white';
+                      pixel.style.opacity = '1'}
+                      else {
+                      pixel.style.cssText += `background-color: ${colorPicker.value}; opacity: ${opacity.value}%;`};
                 }
             })
         }
     }) 
     
     function calculatePixelSide () {
-        return Math.round((250/input.value) * 1000) / 1000
+        return (250/input.value).toFixed(3);
     }
 }
 
@@ -46,22 +59,38 @@ input.addEventListener("input", () => {
         p.remove();
     });
     createGrid(input.value);
+    console.log(input.value)
 })
 
 rainbow.addEventListener("click", () => {
-    randomState = true});
+    randomState = true;
+    deleteState = false});
 
 function randomColor() {   //returns a random rgb color code
   function randomNumber() {
     return Math.floor(Math.random() * 256)
   }
 
-  return `rgb(${randomNumber()}, ${randomNumber()}, ${randomNumber()})`
+  return `rgb(${randomNumber()} ${randomNumber()} ${randomNumber()} /${opacity.value}%)`
 }    
     
 pencil.addEventListener("click", () => {
-    randomState = false}); 
+    randomState = false;
+    deleteState = false}); 
+
+eraser.addEventListener("click", () => {
+    deleteState = true;
+    randomState = false});
+
+reset.addEventListener('click', () => { //reset button
+    const pixels = document.querySelectorAll('.container > *');
+    pixels.forEach(p => {
+        p.style.backgroundColor = 'white';
+        p.style.opacity = "1";
+    });
+}) 
 
 createGrid(input.value);
+console.log(colorPicker.value)
 
 
