@@ -1,5 +1,5 @@
 "use strict"
-const containers = document.querySelectorAll('.container');
+const grid = document.querySelector('.screen')
 const input = document.querySelector('.slide');
 const rainbow = document.querySelector('.rainbow');
 const pencil = document.querySelector('.pencil');
@@ -16,11 +16,10 @@ window.addEventListener("mouseup", () => {
 })
 
 function createGrid (n) {
-    containers.forEach(container => {
-        for (let i = 1; i <= n * n; i++) {
+        for (let i = 1; i <= 2 * n * n; i++) {
             const pixel = document.createElement('div');
             pixel.style.cssText = `border: 1px solid #cacaca; width: ${calculatePixelSide()}px; height: ${calculatePixelSide()}px;`
-            container.appendChild(pixel);
+            grid.appendChild(pixel);
             pixel.addEventListener("mousedown", (e) => {
                 if (e.button === 0) {
                     mouseState = true;
@@ -45,21 +44,19 @@ function createGrid (n) {
                       pixel.style.cssText += `background-color: ${colorPicker.value}; opacity: ${opacity.value}%;`};
                 }
             })
-        }
-    }) 
+        } 
     
     function calculatePixelSide () {
-        return (250/input.value).toFixed(3);
+        return (250/input.value).toFixed(4);
     }
 }
 
 input.addEventListener("input", () => {
-    const pixels = document.querySelectorAll('.container > *');
+    const pixels = document.querySelectorAll('.screen > *');
     pixels.forEach(p => {
         p.remove();
     });
     createGrid(input.value);
-    console.log(input.value)
 })
 
 rainbow.addEventListener("click", () => {
@@ -83,7 +80,7 @@ eraser.addEventListener("click", () => {
     randomState = false});
 
 reset.addEventListener('click', () => { //reset button
-    const pixels = document.querySelectorAll('.container > *');
+    const pixels = document.querySelectorAll('.screen > *');
     pixels.forEach(p => {
         p.style.backgroundColor = 'white';
         p.style.opacity = "1";
