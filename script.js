@@ -18,7 +18,7 @@ window.addEventListener("mouseup", () => {
 function createGrid (n) {
         for (let i = 1; i <= 2 * n * n; i++) {
             const pixel = document.createElement('div');
-            pixel.style.cssText = `border: 1px solid #cacaca; width: ${calculatePixelSide()}px; height: ${calculatePixelSide()}px;`
+            pixel.style.cssText = `background-color: white; border: 1px solid #cacaca; width: ${calculatePixelSide()/2}%; height: ${calculatePixelSide()}%;`
             grid.appendChild(pixel);
             pixel.addEventListener("mousedown", (e) => {
                 if (e.button === 0) {
@@ -47,7 +47,7 @@ function createGrid (n) {
         } 
     
     function calculatePixelSide () {
-        return (250/input.value).toFixed(4);
+        return (100/input.value).toFixed(4);
     }
 }
 
