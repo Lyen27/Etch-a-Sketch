@@ -18,7 +18,7 @@ window.addEventListener("mouseup", () => {
 function createGrid (n) {
         for (let i = 1; i <= 2 * n * n; i++) {
             const pixel = document.createElement('div');
-            pixel.style.cssText = `background-color: white; border: 1px solid #cacaca; width: ${calculatePixelSide()/2}%; height: ${calculatePixelSide()}%;`
+            pixel.style.cssText = `background-color: #e6ffff; border: 1px solid #cacaca; width: ${calculatePixelSide()/2}%; height: ${calculatePixelSide()}%;`
             grid.appendChild(pixel);
             pixel.addEventListener("mousedown", (e) => {
                 if (e.button === 0) {
@@ -26,7 +26,7 @@ function createGrid (n) {
                     if (randomState === true) {
                         pixel.style.backgroundColor = `${randomColor()}`;
                     } else if (deleteState === true) {
-                      pixel.style.backgroundColor = 'white';
+                      pixel.style.backgroundColor = '#e6ffff';
                       pixel.style.opacity = '1'}
                       else {
                       pixel.style.cssText += `background-color:${colorPicker.value}; opacity: ${opacity.value}%;`};
@@ -38,7 +38,7 @@ function createGrid (n) {
                     if (randomState === true) {
                         pixel.style.backgroundColor = `${randomColor()}`;
                     } else if (deleteState === true) {
-                      pixel.style.backgroundColor = 'white';
+                      pixel.style.backgroundColor = '#e6ffff';
                       pixel.style.opacity = '1'}
                       else {
                       pixel.style.cssText += `background-color: ${colorPicker.value}; opacity: ${opacity.value}%;`};
@@ -82,12 +82,11 @@ eraser.addEventListener("click", () => {
 reset.addEventListener('click', () => { //reset button
     const pixels = document.querySelectorAll('.screen > *');
     pixels.forEach(p => {
-        p.style.backgroundColor = 'white';
+        p.style.backgroundColor = '#e6ffff';
         p.style.opacity = "1";
     });
 }) 
 
 createGrid(input.value);
-console.log(colorPicker.value)
 
 

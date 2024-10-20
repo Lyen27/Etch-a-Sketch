@@ -2,6 +2,11 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    border: 0px;
+}
+
+*:focus {
+    outline: none;
 }
 
 body {
@@ -17,10 +22,14 @@ body {
     display: flex;
     width: 650px;
     height: 300px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 25px;
     background-color: #89CFF0;
     box-shadow: 0 0 20px;
+}
+
+.lowerScreen {
+    border-top: 3px solid black;
 }
 
 .upperScreen {
@@ -31,9 +40,9 @@ body {
 .screen {
     display: flex;
     flex-wrap: wrap;
-    width: 502px;
-    height: 252px;
-    border: 1px solid black;
+    width: 509px;
+    height: 259px;
+    border: 8px solid #679cb4;
     background-color: white;
 }
 
@@ -41,10 +50,10 @@ body {
     width: 637px;
     height:32.44px;
     border: 1px solid black;
+    border-bottom: 10px solid black;
     border-radius: 20px;
     margin: 1px 1px;
     background-color: #89CFF0;
-    box-shadow: 0 0 30px;
 }
 
 .buttonBelow {
@@ -56,10 +65,9 @@ body {
     display: flex;
     width: 100%;
     height: 85%;
-    border: 1px solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: white;
+    border: 1px solid rgb(68, 67, 67);
+    border-top: 15px solid #899696;
+    background-color: #e6ffff;
 }
 
 .first {
@@ -74,13 +82,19 @@ body {
 .first > button {
     width: 60px;
     height: 60px;
-    border-radius: 10px;
-    background-color: white;
+    border-bottom: 8px solid #a6ecec;
+    border-right: 6px solid #7d8585;
+    border-radius: 15px;
+    background-color: #87ccc1;
 }
 
 .first > button:hover {
     width: 70px;
     height: 70px;
+}
+
+.first > button:active {
+    border:0px;
 }
 
 .pencil {
@@ -91,7 +105,9 @@ body {
 
 .rainbow {
     background-image: url('./images/rainbow.png');
-    background-size: cover;
+    background-size: 50px 50px;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .eraser {
@@ -122,21 +138,86 @@ body {
     border-radius: 20px;
 }
 
-.slide {
+/*start of the slider's styles*/
+.slide  {
+    background: transparent;
+    appearance: none;
     width: 50%;
     margin-bottom: 10px;
 }
+.slide::-webkit-slider-runnable-track {
+    background: #87ccc1;
+    height: 8px;
+    border-radius: 10px;
+}
 
+.slide::-webkit-slider-thumb {
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    background-color: #4e788a;
+    margin-top: -3px;
+}
+
+.slide::-moz-range-track {
+    background: #87ccc1;
+    height: 8px;
+    border-radius: 10px;
+}
+
+.slide::-moz-range-thumb {
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    background-color: #4e788a;
+    margin-top: -3px;
+    border-radius: 0px;
+    border:none;
+}
+
+.opacity  {
+    background: transparent;
+    appearance: none;
+    width: 95%;
+    margin-bottom: 10px;
+    transform: rotate(270deg);
+}
+
+.opacity::-webkit-slider-runnable-track {
+    background: #87ccc1;
+    height: 8px;
+    border-radius: 10px;
+}
+
+.opacity::-webkit-slider-thumb {
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    background-color: #4e788a;
+    margin-top: -3px;
+}
+
+.opacity::-moz-range-track {
+    background: #87ccc1;
+    height: 8px;
+    border-radius: 10px;
+}
+
+.opacity::-moz-range-thumb {
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    background-color: #4e788a;
+    margin-top: -3px;
+    border-radius: 0px;
+    border:none;
+}
+/*end of the slider's styles*/
 .last {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 25%;
-}
-
-.opacity {
-    transform: rotate(270deg);
-    width: 95%;
 }
 
 .btn {
@@ -148,7 +229,11 @@ body {
 .btn > button {
     flex-grow: 1;
     flex-basis: 0;
+    background-color: white;
     border: 1px solid black;
+    border-bottom: 3px solid rgb(90, 87, 87);
+    border-right: 2px solid rgb(51, 51, 51);
+    border-left: 2px solid rgb(51, 51, 51);
     margin: 1px;
 }
 
@@ -166,15 +251,24 @@ body {
     align-items: flex-end;
     width: 20%;
     height: 100%;
+    border-top: 15px solid #679cb4;
+    border-top-right-radius: 25px;
 }
 
 .reset {
-    background-color: grey;
+    background-color: black;
     width: 25px;
     height: 25px;
     border-radius: 100%;
+    border-bottom: 3px solid white;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;
     margin-bottom: 30px;
     margin-left: 10px;
+}
+
+.reset:active {
+    border: 0px;
 }
 
 .text {
@@ -183,6 +277,8 @@ body {
 }
 
 .buttonLeft {
+    border-top: 15px solid #679cb4;
+    border-top-left-radius: 25px;
     width:20%;
     height: 100%;
 }
