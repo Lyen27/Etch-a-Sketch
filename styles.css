@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     border: 0px;
+    cursor: url('./images/cursor.png') 10 8, auto;
 }
 
 *:focus {
@@ -45,6 +46,7 @@ body {
     border: 8px solid #679cb4;
     background-color: white;
 }
+
 
 .middle {
     width: 637px;
