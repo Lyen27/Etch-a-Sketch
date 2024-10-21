@@ -274,7 +274,7 @@ body {
     background-color: black;
     border-radius: 100%;
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     text-align: center;
     border-bottom: 3px solid white;
     border-right: 2px solid grey;
@@ -320,12 +320,36 @@ body {
 }
 
 .buttonLeft {
+    display:flex;
+    justify-content: center;
+    align-items: center;
     border-top: 15px solid #679cb4;
     border-top-left-radius: 25px;
     width:20%;
     height: 100%;
 }
 
+.arrows {
+    display: flex;
+    align-items: center;
+    margin-bottom: 55px;
+}
 
+.left,
+.right {
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    border-bottom: 5px solid white;
+}
 
+.upDown > div {
+    height: 35px;
+    width: 25px;
+    background-color: black;
+}
+
+.down {
+    border-bottom: 8px solid white;
+}
 
