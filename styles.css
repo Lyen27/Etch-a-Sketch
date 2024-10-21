@@ -247,28 +247,71 @@ body {
 
 .buttonRight {
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-end;
+    flex-direction: column;
     width: 20%;
     height: 100%;
     border-top: 15px solid #679cb4;
     border-top-right-radius: 25px;
 }
+/*buttons*/
+.btns {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.xaby {
+    display: flex;
+    align-items: center;
+}
+
+.y,
+.a,
+.xb > div {
+    height: 25px;
+    width: 25px;
+    background-color: black;
+    border-radius: 100%;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: 3px solid white;
+    border-right: 2px solid grey;
+    border-left: 2px solid grey;
+}
+
+.xb {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.buttonReset {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 15%;
+}
 
 .reset {
     background-color: black;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
     border-bottom: 3px solid white;
     border-right: 2px solid grey;
     border-left: 2px solid grey;
     margin-bottom: 30px;
-    margin-left: 10px;
+    margin-right: 4px;
+    background-image: url(./images/poweroff.png);
+    background-size: cover;
 }
 
 .reset:active {
     border: 0px;
+    width: 30px;
+    height: 30px;
 }
 
 .text {
