@@ -42,8 +42,8 @@ body {
 .screen {
     display: flex;
     flex-wrap: wrap;
-    width: 509px;
-    height: 259px;
+    width: 516px;
+    height: 266px;
     border: 8px solid #679cb4;
     background-color: white;
 }
