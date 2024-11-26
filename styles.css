@@ -41,7 +41,6 @@ body {
 
 .screen {
     display: flex;
-    flex-wrap: wrap;
     width: 516px;
     height: 266px;
     border: 8px solid #679cb4;
