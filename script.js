@@ -46,9 +46,9 @@ function createGrid(n) {
                     mouseState = true;
                     if (randomState === true) {
                         pixel.style.backgroundColor = `${randomColor()}`;
-                        pixel.style.opacity = `${opacity.value}`;
+                        pixel.style.opacity = `${opacity.value/100}`;
                         pixelState[index][i].color = `${pixel.style.backgroundColor}`;
-                        pixelState[index][i].opacity = `${opacity.value}`;
+                        pixelState[index][i].opacity = `${opacity.value/100}`;
                     } else if (deleteState === true) {
                         pixel.style.backgroundColor = '#e6ffff';
                         pixel.style.opacity = '1'
@@ -57,9 +57,9 @@ function createGrid(n) {
                     }
                     else {
                         pixel.style.backgroundColor = `${colorPicker.value}`;
-                        pixel.style.opacity = `${opacity.value}`;
+                        pixel.style.opacity = `${opacity.value/100}`;
                         pixelState[index][i].color = `${colorPicker.value}`;
-                        pixelState[index][i].opacity = `${opacity.value}`;
+                        pixelState[index][i].opacity = `${opacity.value/100}`;
 
                     };
                     e.preventDefault();
@@ -69,9 +69,9 @@ function createGrid(n) {
                 if (mouseState === true) {
                     if (randomState === true) {
                         pixel.style.backgroundColor = `${randomColor()}`;
-                        pixel.style.opacity = `${opacity.value}`;
+                        pixel.style.opacity = `${opacity.value/100}`;
                         pixelState[index][i].color = `${pixel.style.backgroundColor}`;
-                        pixelState[index][i].opacity = `${opacity.value}`;
+                        pixelState[index][i].opacity = `${opacity.value/100}`;
                     } else if (deleteState === true) {
                         pixel.style.backgroundColor = '#e6ffff';
                         pixel.style.opacity = '1'
@@ -80,9 +80,9 @@ function createGrid(n) {
                     }
                     else {
                         pixel.style.backgroundColor = `${colorPicker.value}`;
-                        pixel.style.opacity = `${opacity.value}`;
+                        pixel.style.opacity = `${opacity.value/100}`;
                         pixelState[index][i].color = `${colorPicker.value}`;
-                        pixelState[index][i].opacity = `${opacity.value}`;
+                        pixelState[index][i].opacity = `${opacity.value/100}`;
 
                     };
                 }
@@ -130,11 +130,17 @@ eraser.addEventListener("click", () => {
 });
 
 reset.addEventListener('click', () => { //reset button
-    const pixels = document.querySelectorAll('.screen > *');
+    const pixels = document.querySelectorAll('.screen div');
     pixels.forEach(p => {
         p.style.backgroundColor = '#e6ffff';
         p.style.opacity = "1";
     });
+    pixelState.forEach((item) => {
+        item.forEach((i) => {
+            i.color = '#e6ffff';
+            i.opacity = '1';
+        })
+    })
 })
 
 createGrid(input.value);
